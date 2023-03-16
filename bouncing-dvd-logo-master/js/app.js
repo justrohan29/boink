@@ -20,8 +20,8 @@ let dvd = {
     dvd.img.src = 'dvd-logo.png';
 
 // han bhai online se hi uthaya h kyonki itni mehnat padhai mein krunga to behtar h
-    canvas.width  = window.innerWidth;
-    canvas.height = window.innerHeight;
+    canvas.width  = 2*window.innerWidth;
+    canvas.height = 2*window.innerHeight;
 
     pickColor();
     update();
@@ -31,7 +31,7 @@ function update() {
     setTimeout(() => {
         //Draw the canvas background
         ctx.fillStyle = '#000';
-        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        ctx.fillRect(0, 0, canvas.height, canvas.height);
         //Draw DVD Logo and his background
         ctx.fillStyle = logoColor;
         ctx.fillRect(dvd.x, dvd.y, dvd.img.width*scale, dvd.img.height*scale);
