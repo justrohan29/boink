@@ -1,4 +1,4 @@
-let speed = 20;
+let speed = 12;
 //get a life will you
 let scale = 0.17; // Image scale (I work on 1080p monitor)
 let canvas;
@@ -9,8 +9,8 @@ let dvd = {
     x: 200,
     y: 300,
 //kya mil rha h dusro ka code khol ke
-    xspeed: 10,
-    yspeed: 10,
+    xspeed: 6,
+    yspeed: 6,
     img: new Image()
 };
 
