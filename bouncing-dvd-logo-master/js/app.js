@@ -1,6 +1,6 @@
 let speed = 17;
 //get a life will you
-let scale = 0.17; // Image scale (I work on 1080p monitor)
+let scale = 0.17;
 let canvas;
 let ctx;
 let logoColor;
@@ -17,7 +17,7 @@ let dvd = {
 (function main(){
     canvas = document.getElementById("tv-screen");
     ctx = canvas.getContext("2d");
-    dvd.img.src = 'dvd-logo.png';
+    dvd.img.src = 'image.png';
 
 // han bhai online se hi uthaya h kyonki itni mehnat padhai mein krunga to behtar h
     canvas.width  = window.innerWidth;
@@ -29,24 +29,19 @@ let dvd = {
 
 function update() {
     setTimeout(() => {
-        //Draw the canvas background
         ctx.fillStyle = '#000';
         ctx.fillRect(0, 0, canvas.width, canvas.height);
-        //Draw DVD Logo and his background
         ctx.fillStyle = logoColor;
         ctx.fillRect(dvd.x, dvd.y, dvd.img.width*scale, dvd.img.height*scale);
         ctx.drawImage(dvd.img, dvd.x, dvd.y, dvd.img.width*scale, dvd.img.height*scale);
-        //Move the logo
         dvd.x+=dvd.xspeed;
         dvd.y+=dvd.yspeed;
-        //Check for collision 
         checkHitBox();
         update();   
     }, speed)
 }
 //code kaafi aasan h waise thodi mehna krk ho jata but main bhooka hun aur mujhe dusro ka credit khane ki aadat h
 
-//Check for border collision
 function checkHitBox(){
     if(dvd.x+dvd.img.width*scale >= canvas.width || dvd.x <= 0){
         dvd.xspeed *= -1;
@@ -58,8 +53,7 @@ function checkHitBox(){
         pickColor();
     }    
 }
-//apna code 4 ghnte mein likhne se acha online code uthake alag website pe host kr diya hehe
-//Pick a random color in RGB format
+
 function pickColor(){
     r = Math.random() * (254 - 0) + 0;
     g = Math.random() * (254 - 0) + 0;
