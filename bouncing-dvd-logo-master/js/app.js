@@ -1,4 +1,4 @@
-let speed = 20;
+let speed = 17.5;
 //get a life will you
 let scale = 0.17; // Image scale (I work on 1080p monitor)
 let canvas;
